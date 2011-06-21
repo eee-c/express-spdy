@@ -1,0 +1,17 @@
+{
+  "author": "Chris Strom <chris@eeecomputes.com> (http://eeecomputes.com)",
+  "name": "express-spdy",
+  "description": "SPDY-ize express.js sites.",
+  "version": "0.0.0",
+  "homepage": "https://github.com/eee-c/express-spdy",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eee-c/express-spdy.git"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": "~v0.5.0-pre"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
