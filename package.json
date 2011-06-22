@@ -12,6 +12,9 @@
   "engines": {
     "node": "~v0.5.0-pre"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": ">= 2.3.11",
+    "connect-spdy": ">= 0.0.0"
+  },
   "devDependencies": {}
 }
