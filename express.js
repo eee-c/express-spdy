@@ -16,7 +16,7 @@ exports.SPDYServer = SPDYServer;
 
 var http = require('http')
   , res = http.ServerResponse.prototype
-  , spdy = require('../../../lib/spdy')
+  , spdy = require('spdy')
   , spdy_res = spdy.Response.prototype;
 
 // TODO: other methods?

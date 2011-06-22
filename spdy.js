@@ -12,7 +12,7 @@
 var connect = require('connect-spdy')
   , express = require('express')
   , HTTPServer = express.HTTPServer
-  , spdy = require('node-spdy')
+  , spdy = require('spdy')
   , spdy_res = spdy.Response.prototype
   , http = require('http')
   , res = http.ServerResponse.prototype;
