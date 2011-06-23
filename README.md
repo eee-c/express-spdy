@@ -17,9 +17,9 @@ Install the latest snapshot of openssl with NPN and shared objects.  Currently (
 
 Install node.js 0.5.0-pre or later.  Currently (6/21/2011), this requires installing node from the master repository (0.4.8 will _not_ work).
 
-_More instructions_ on installing the latest openssl + node are available at: http://japhr.blogspot.com/2011/06/setting-up-node-spdy.html
-
 With the npn-enabled node, `npm install express-spdy`.
+
+Detailed instructions in [INSTALL.md](https://github.com/eee-c/express-spdy/blob/master/INSTALL.md).
 
 CONFIGURATION
 -------------
@@ -36,7 +36,7 @@ An express.js app can then be SPDY-ized by changing the first few lines to:
       NPNProtocols: ['spdy/2']
     });
 
-Better instructions to follow....
+Detailed instructions in [INSTALL.md](https://github.com/eee-c/express-spdy/blob/master/INSTALL.md).
 
 
 TODO
