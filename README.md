@@ -43,8 +43,6 @@ TODO
 ----
 
 * Tests
-* Verify that this works with more than a single request
-* Verify that other browsers are still able to access
 * Server push
 * Documentation (of course)
 
