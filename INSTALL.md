@@ -91,7 +91,7 @@ Logout and log back in to ensure that your changes are applied correctly.
 Install NPM and Express.js
 --------------------------
 
-    curl http://npmjs.org/install.sh | sh
+    curl http://npmjs.org/install.sh | clean=yes sh
     npm install -g express
 
 Create a Sample Express.js App to SPDY-ize
