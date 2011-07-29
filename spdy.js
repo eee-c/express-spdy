@@ -10,7 +10,7 @@
  */
 
 var connect = require('connect-spdy')
-  , express = require('express')
+  , express = require('express-unstable')
   , HTTPServer = express.HTTPServer
   , spdy = require('spdy')
   , spdy_res = spdy.Response.prototype
