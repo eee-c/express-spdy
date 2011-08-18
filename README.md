@@ -17,6 +17,8 @@ Install the latest snapshot of openssl with NPN and shared objects.  Currently (
 
 Install node.js 0.5.0-pre or later.  Currently (6/21/2011), this requires installing node from the master repository (0.4.8 will _not_ work).
 
+*NOTE: this will NEVER work on node 0.5.4!!! (will support 0.5.5 when available)*
+
 With the npn-enabled node, `npm install express-spdy`.
 
 Detailed instructions in [INSTALL.md](https://github.com/eee-c/express-spdy/blob/master/INSTALL.md).

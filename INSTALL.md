@@ -1,7 +1,7 @@
 INSTALL express-spdy
 ====================
 
-These instructions will install edge-openssl, edge-node.js and express-spdy in your home directory.  This will *not* overwrite or affect any system libraries.
+These instructions will install edge-openssl, unstable node.js and express-spdy in your home directory.  This will *not* overwrite or affect any system libraries.
 
 I work with tarballs in `$HOME/src` and source code controlled code in `$HOME/repos`.
 
@@ -47,19 +47,23 @@ After configuring openssl, build and install it:
     make
     make install
 
-Edge node.js
-------------
+Unstable node.js
+----------------
 
-Install the source code in `$HOME/repos`:
+*NOTE: do NOT use node 0.5.4!!!*
 
-    mkdir $HOME/repos
-    cd $HOME/repos/
-    git clone https://github.com/joyent/node.git
-    cd node
+Install the source code in `$HOME/src`:
+
+    mkdir -p $HOME/src
+    cd $HOME/src/
+    # NOTE: check for latest version at http://nodejs.org/#download
+    wget http://nodejs.org/dist/v0.5.4/node-v0.5.3.tar.gz
+    tar zxf node-v0.5.3.tar.gz
+    cd node-v0.5.3
 
 Configure node to use edge-openssl and to install locally:
 
-    ./configure --openssl-includes=$HOME/local/include --openssl-libpath=$HOME/local/lib --prefix=$HOME/local/node-v0.5.0-pre
+    ./configure --openssl-includes=$HOME/local/include --openssl-libpath=$HOME/local/lib --prefix=$HOME/local/node-v0.5.3
     make
     make install
 
