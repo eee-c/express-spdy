@@ -57,7 +57,7 @@ Install the source code in `$HOME/src`:
     mkdir -p $HOME/src
     cd $HOME/src/
     # NOTE: check for latest version at http://nodejs.org/#download
-    wget http://nodejs.org/dist/v0.5.4/node-v0.5.3.tar.gz
+    wget http://nodejs.org/dist/v0.5.3/node-v0.5.3.tar.gz
     tar zxf node-v0.5.3.tar.gz
     cd node-v0.5.3
 
