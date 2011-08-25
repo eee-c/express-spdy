@@ -96,7 +96,7 @@ Install NPM and Express.js
 --------------------------
 
     curl http://npmjs.org/install.sh | clean=yes sh
-    npm install -g express
+    npm install -g express-unstable
 
 Create a Sample Express.js App to SPDY-ize
 ------------------------------------------
