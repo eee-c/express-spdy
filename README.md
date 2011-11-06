@@ -13,11 +13,9 @@ The express-spdy package aims to allow existing express.js sites to experiment w
 INSTALLATION
 ------------
 
-Install the latest snapshot of openssl with NPN and shared objects.  Currently (6/21/2011), this requires obtaining a SNAP tarball from the openssl FTP server or checking out the latest trunk from the openssl CVS server.
+Install the latest snapshot of openssl with NPN and shared objects.  Currently, this requires obtaining a SNAP tarball from the openssl FTP server or checking out the latest trunk from the openssl CVS server.
 
-Install node.js 0.5.0-pre or later.  Currently (6/21/2011), this requires installing node from the master repository (0.4.8 will _not_ work).
-
-*NOTE: this will NEVER work on node 0.5.4!!! (will support 0.5.5 when available)*
+Install node.js 0.6.0 or later.
 
 With the npn-enabled node, `npm install express-spdy`.
 
