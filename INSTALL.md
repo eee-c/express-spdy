@@ -50,20 +50,18 @@ After configuring openssl, build and install it:
 Unstable node.js
 ----------------
 
-*NOTE: do NOT use node 0.5.4!!!*
-
 Install the source code in `$HOME/src`:
 
     mkdir -p $HOME/src
     cd $HOME/src/
     # NOTE: check for latest version at http://nodejs.org/#download
-    wget http://nodejs.org/dist/v0.5.3/node-v0.5.3.tar.gz
-    tar zxf node-v0.5.3.tar.gz
-    cd node-v0.5.3
+    wget http://nodejs.org/dist/v0.6.0/node-v0.6.0.tar.gz
+    tar zxf node-v0.6.0.tar.gz
+    cd node-v0.6.0
 
 Configure node to use edge-openssl and to install locally:
 
-    ./configure --openssl-includes=$HOME/local/include --openssl-libpath=$HOME/local/lib --prefix=$HOME/local/node-v0.5.3
+    ./configure --openssl-includes=$HOME/local/include --openssl-libpath=$HOME/local/lib --prefix=$HOME/local/node-v0.6.0
     make
     make install
 

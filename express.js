@@ -1,4 +1,4 @@
-var express = require('express-unstable')
+var express = require('express')
   , expressCreateServer = express.createServer
   , SPDYServer = require('./spdy');
 
