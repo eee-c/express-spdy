@@ -2,7 +2,7 @@
   "author": "Chris Strom <chris@eeecomputes.com> (http://eeecomputes.com)",
   "name": "express-spdy",
   "description": "SPDY-ize express.js sites.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/eee-c/express-spdy",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
   "dependencies": {
     "express": ">= 2.5.0",
     "connect-spdy": ">= 0.1.0",
-    "spdy": ">= 0.1.0"
+    "spdy": ">= 0.1.0 < 1.0.0"
   },
   "devDependencies": {}
 }
