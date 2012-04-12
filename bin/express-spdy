@@ -13,7 +13,7 @@ var fs = require('fs')
  * Framework version.
  */
 
-var version = '2.5.8';
+var version = '0.1.3';
 
 /**
  * Add session support.
@@ -148,6 +148,64 @@ var stylus = [
 ].join(eol);
 
 /**
+ * Public key
+ */
+var cert = [
+    '-----BEGIN CERTIFICATE-----'
+  , 'MIICHzCCAYgCCQCPPSUAa8QZojANBgkqhkiG9w0BAQUFADBUMQswCQYDVQQGEwJS'
+  , 'VTETMBEGA1UECBMKU29tZS1TdGF0ZTENMAsGA1UEBxMET21zazEhMB8GA1UEChMY'
+  , 'SW50ZXJuZXQgV2lkZ2l0cyBQdHkgTHRkMB4XDTExMDQwOTEwMDY0NVoXDTExMDUw'
+  , 'OTEwMDY0NVowVDELMAkGA1UEBhMCUlUxEzARBgNVBAgTClNvbWUtU3RhdGUxDTAL'
+  , 'BgNVBAcTBE9tc2sxITAfBgNVBAoTGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDCB'
+  , 'nzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA1bn25sPkv46wl70BffxradlkRd/x'
+  , 'p5Xf8HDhPSfzNNctERYslXT2fX7Dmfd5w1XTVqqGqJ4izp5VewoVOHA8uavo3ovp'
+  , 'gNWasil5zADWaM1T0nnV0RsFbZWzOTmm1U3D48K8rW3F5kOZ6f4yRq9QT1gF/gN7'
+  , '5Pt494YyYyJu/a8CAwEAATANBgkqhkiG9w0BAQUFAAOBgQBuRZisIViI2G/R+w79'
+  , 'vk21TzC/cJ+O7tKsseDqotXYTH8SuimEH5IWcXNgnWhNzczwN8s2362NixyvCipV'
+  , 'yd4wzMpPbjIhnWGM0hluWZiK2RxfcqimIBjDParTv6CMUIuwGQ257THKY8hXGg7j'
+  , 'Uws6Lif3P9UbsuRiYPxMgg98wg=='
+  , '-----END CERTIFICATE-----'
+].join(eol);
+
+/**
+ * Certificate signing request
+ */
+var csr = [
+    '-----BEGIN CERTIFICATE REQUEST-----'
+  , 'MIIBkzCB/QIBADBUMQswCQYDVQQGEwJSVTETMBEGA1UECBMKU29tZS1TdGF0ZTEN'
+  , 'MAsGA1UEBxMET21zazEhMB8GA1UEChMYSW50ZXJuZXQgV2lkZ2l0cyBQdHkgTHRk'
+  , 'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVufbmw+S/jrCXvQF9/Gtp2WRF'
+  , '3/Gnld/wcOE9J/M01y0RFiyVdPZ9fsOZ93nDVdNWqoaoniLOnlV7ChU4cDy5q+je'
+  , 'i+mA1ZqyKXnMANZozVPSedXRGwVtlbM5OabVTcPjwrytbcXmQ5np/jJGr1BPWAX+'
+  , 'A3vk+3j3hjJjIm79rwIDAQABoAAwDQYJKoZIhvcNAQEFBQADgYEAiNWhz6EppIVa'
+  , 'FfUaB3sLeqfamb9tg9kBHtvqj/FJni0snqms0kPWaTySEPHZF0irIb7VVdq/sVCb'
+  , '3gseMVSyoDvPJ4lHC3PXqGQ7kM1mIPhDnR/4HDA3BhlGhTXSDIHgZnvI+HMBdsyC'
+  , 'hC3dz5odyKqe4nmoofomALkBL9t4H8s='
+  , '-----END CERTIFICATE REQUEST-----'
+].join(eol);
+
+/**
+ * Private key
+ */
+var key = [
+  , '-----BEGIN RSA PRIVATE KEY-----'
+  , 'MIICXAIBAAKBgQDVufbmw+S/jrCXvQF9/Gtp2WRF3/Gnld/wcOE9J/M01y0RFiyV'
+  , 'dPZ9fsOZ93nDVdNWqoaoniLOnlV7ChU4cDy5q+jei+mA1ZqyKXnMANZozVPSedXR'
+  , 'GwVtlbM5OabVTcPjwrytbcXmQ5np/jJGr1BPWAX+A3vk+3j3hjJjIm79rwIDAQAB'
+  , 'AoGAAv2QI9h32epQND9TxwSCKD//dC7W/cZOFNovfKCTeZjNK6EIzKqPTGA6smvR'
+  , 'C1enFl5adf+IcyWqAoe4lkqTvurIj+2EhtXdQ8DBlVuXKr3xvEFdYxXPautdTCF6'
+  , 'KbXEyS/s1TZCRFjYftvCrXxc3pK45AQX/wg7z1K+YB5pyIECQQD0OJvLoxLYoXAc'
+  , 'FZraIOZiDsEbGuSHqoCReFXH75EC3+XGYkH2bQ/nSIZ0h1buuwQ/ylKXOlTPT3Qt'
+  , 'Xm1OQEBvAkEA4AjWsIO/rRpOm/Q2aCrynWMpoUXTZSbL2yGf8pxp/+8r2br5ier0'
+  , 'M1LeBb/OPY1+k39NWLXxQoo64xoSFYk2wQJAd2wDCwX4HkR7HNCXw1hZL9QFK6rv'
+  , '20NN0VSlpboJD/3KT0MW/FiCcVduoCbaJK0Au+zEjDyy4hj5N4I4Mw6KMwJAXVAx'
+  , 'I+psTsxzS4/njXG+BgIEl/C+gRYsuMQDnAi8OebDq/et8l0Tg8ETSu++FnM18neG'
+  , 'ntmBeMacinUUbTXuwQJBAJp/onZdsMzeVulsGrqR1uS+Lpjc5Q1gt5ttt2cxj91D'
+  , 'rio48C/ZvWuKNE8EYj2ALtghcVKRvgaWfOxt2GPguGg='
+  , '-----END RSA PRIVATE KEY-----'
+].join(eol);
+
+/**
  * App template.
  */
 
@@ -157,11 +215,41 @@ var app = [
   , ' * Module dependencies.'
   , ' */'
   , ''
-  , 'var express = require(\'express\')'
-  , '  , routes = require(\'./routes\');'
+  , 'var express = require(\'express-spdy\')'
+  , '  , routes = require(\'./routes\')'
+  , '  , fs = require(\'fs\')'
+  , '  , host = \'https://localhost:3000/\';'
   , ''
-  , 'var app = module.exports = express.createServer();'
+
+  , 'var app = module.exports = express.createServer({'
+  , '  key: fs.readFileSync(__dirname + \'/keys/spdy-key.pem\'),'
+  , '  cert: fs.readFileSync(__dirname + \'/keys/spdy-cert.pem\'),'
+  , '  ca: fs.readFileSync(__dirname + \'/keys/spdy-csr.pem\'),'
+  , '  NPNProtocols: [\'spdy/2\', \'http/1.1\'],'
+  , '  push: awesome_push'
+  , '});'
   , ''
+
+  , 'function awesome_push(pusher) {'
+  , '  // Only push in response to the first request'
+  , '  if (pusher.streamID > 1) return;'
+  , ''
+  , '  // Push resources that can be deferred until after the response is'
+  , '  // sent'
+  , '  pusher.pushLater(['
+  , '    local_path_and_url("stylesheets/style.css")'
+  , '  ]);'
+  , '}'
+  , ''
+
+  , 'function local_path_and_url(relative_path) {'
+  , '  return ['
+  , '    "public/" + relative_path,'
+  , '    host + relative_path'
+  , '  ];'
+  , '}'
+  , ''
+
   , '// Configuration'
   , ''
   , 'app.configure(function(){'
@@ -317,7 +405,7 @@ function createApplicationAt(path) {
     json += '  , "version": "0.0.1"' + eol;
     json += '  , "private": true' + eol;
     json += '  , "dependencies": {' + eol;
-    json += '      "express": "' + version + '"' + eol;
+    json += '      "express-spdy": "' + version + '"' + eol;
     if (cssEngine) json += '    , "' + cssEngine + '": ">= 0.0.1"' + eol;
     if (templateEngine) json += '    , "' + templateEngine + '": ">= 0.0.1"' + eol;
     json += '  }' + eol;
@@ -326,6 +414,13 @@ function createApplicationAt(path) {
 
     write(path + '/package.json', json);
     write(path + '/app.js', app);
+  });
+
+  // SSL support
+  mkdir(path + '/keys', function(){
+    write(path + '/keys/spdy-key.pem', key);
+    write(path + '/keys/spdy-cert.pem', cert);
+    write(path + '/keys/spdy-csr.pem', csr);
   });
 }
 
