@@ -47,7 +47,7 @@ After configuring openssl, build and install it:
     make
     make install
 
-Unstable node.js
+Stable node.js
 ----------------
 
 Install the source code in `$HOME/src`:
@@ -55,13 +55,13 @@ Install the source code in `$HOME/src`:
     mkdir -p $HOME/src
     cd $HOME/src/
     # NOTE: check for latest version at http://nodejs.org/#download
-    wget http://nodejs.org/dist/v0.6.0/node-v0.6.0.tar.gz
-    tar zxf node-v0.6.0.tar.gz
-    cd node-v0.6.0
+    wget http://nodejs.org/dist/v0.6.16/node-v0.6.16.tar.gz
+    tar zxf node-v0.6.16.tar.gz
+    cd node-v0.6.16
 
 Configure node to use edge-openssl and to install locally:
 
-    ./configure --openssl-includes=$HOME/local/include --openssl-libpath=$HOME/local/lib --prefix=$HOME/local/node-v0.6.0
+    ./configure --openssl-includes=$HOME/local/include --openssl-libpath=$HOME/local/lib --prefix=$HOME/local/node-v0.6.16
     make
     make install
 
@@ -90,42 +90,19 @@ Add the following to $HOME/.bashrc:
 
 Logout and log back in to ensure that your changes are applied correctly.
 
-Install NPM and Express.js
+Install NPM and Express-Spdy
 --------------------------
 
     curl http://npmjs.org/install.sh | clean=yes sh
-    npm install -g express-unstable
+    npm install -g express-spdy
 
-Create a Sample Express.js App to SPDY-ize
-------------------------------------------
+Create a Sample Express-Spdy App
+--------------------------------
 
     cd $HOME/repos
-    express example-spdy
+    express-spdy example-spdy
     cd example-spdy
-    npm install express-spdy jade
-
-Copy SSL keys from node-spdy:
-
-    mkdir keys
-    cp node_modules/express-spdy/node_modules/spdy/keys/spdy* keys/
-
-Edit `app.js`.  Replace the following at the top of the generated code:
-
-    var express = require('express');
-
-    var app = module.exports = express.createServer();
-
-Replacing it with:
-
-    var express = require('express-spdy')
-      , fs = require('fs');
-
-    var app = module.exports = express.createServer({
-      key: fs.readFileSync(__dirname + '/keys/spdy-key.pem'),
-      cert: fs.readFileSync(__dirname + '/keys/spdy-cert.pem'),
-      ca: fs.readFileSync(__dirname + '/keys/spdy-csr.pem'),
-      NPNProtocols: ['spdy/2']
-    });
+    npm install
 
 Run the Sample App
 ------------------
