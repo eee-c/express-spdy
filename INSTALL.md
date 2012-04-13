@@ -1,7 +1,7 @@
 INSTALL express-spdy
 ====================
 
-These instructions will install edge-openssl, unstable node.js and express-spdy in your home directory.  This will *not* overwrite or affect any system libraries.
+These instructions will install edge-openssl, node.js and express-spdy in your home directory.  This will *not* overwrite or affect any system libraries.
 
 I work with tarballs in `$HOME/src` and source code controlled code in `$HOME/repos`.
 
