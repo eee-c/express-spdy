@@ -5,7 +5,7 @@ express-spdy
 
 [SPDY](http://www.chromium.org/spdy) is a new protocol from Google based on HTTP.  It aims for 50% decrease in page load times over vanilla HTTP.
 
-Currently Google Chrome is the only browser that supports SPDY.
+Currently, Google Chrome is the only browser that supports SPDY in general release. Firefox has SPDY support in its nightlies.
 
 The express-spdy package aims to allow existing express.js sites to experiment with SPDY without making (many) changes.
 
