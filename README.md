@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/eee-c/express-spdy.png)](http://travis-ci.org/eee-c/express-spdy)
 express-spdy
 ============
 
